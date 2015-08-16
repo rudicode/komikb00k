@@ -1,0 +1,19 @@
+<h1>List of Authors</h1>
+<%= link_to 'New Author', new_user_path %>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th colspan="3"></th>
+  </tr>
+
+  <% @users.each do |user| %>
+    <tr>
+      <td><strong><%= user.name %></strong></td>
+      <td><%= user.description %></td>
+      <td><small><%= link_to 'Show', user_path(user) %></small></td>
+      <td><small><%= link_to 'Edit', edit_user_path(user) %></small></td>
+      <td><small><%= link_to 'Destroy', user_path(user), method: :delete, data: { confirm: 'Are you sure?'} %></small></td>
+    </tr>
+  <% end %>
+</table>
