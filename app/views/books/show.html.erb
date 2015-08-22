@@ -1,0 +1,9 @@
+<h1><%= @book.title %></h1>
+<% @pages.each do |page| %>
+  <div class="">
+    <%= link_to "#{page.title}", book_page_path(@book,page) %>
+  </div>
+<% end %>
+<div class="">
+  <%= link_to 'Add a page', new_book_page_path(@book) %>
+</div>

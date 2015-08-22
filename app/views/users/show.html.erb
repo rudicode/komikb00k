@@ -1,0 +1,11 @@
+<h1>User Name: <%= @user.name %></h1>
+<h4>Description: <%= @user.description %></h4>
+
+<h3>Comic Books</h3>
+<%= render @user.books %>
+
+<h2>Add a book:</h2>
+      <%= render 'books/form' %>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
