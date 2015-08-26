@@ -12,38 +12,46 @@
   </head>
   <body>
     <div class="row">
-      <div class="large-2 columns">row 1 left</div>
-      <div id="topLeft" class="large-2 columns">
-        <ul>
+      <div class="large-2 columns"><small>row 1 left</small></div>
+      <div id="topLeft" class="large-8 columns">
+        <ul class="inline-list">
+          <li><%= link_to(image_tag("logos/logo.png", width: '110'), root_path) %></li>
+          <li><%= link_to 'Home', root_path %></li>
           <li><a href="/archive">Archive</a></li>
           <li><a href="http://what-if.xkcd.com">What If?</a></li>
           <li><a href="http://blag.xkcd.com">Blag</a></li>
           <li><a href="http://store.xkcd.com/">Store</a></li>
-          <li><a rel="author" href="/about">About</a></li>
         </ul>
       </div>
-      <div id="topRight" class="large-6 columns">
+      <div class="large-2 columns"><small>row 1 right</small></div>
+    </div>
+
+    <div class="row">
+      <div class="large-2 columns"><small>row 2 left</small></div>
+      <div id="topRight" class="large-8 columns">
         <div id="masthead">
-          <span><a href="/"><img src="#" alt="Logo" height="90" width="190"/></a></span>
+          <span>Author:</span>
         </div>
       </div>
-      <div class="large-2 columns">row 1 right</div>
+      <div class="large-2 columns"><small>row 2 right</small></div>
     </div>
 
     <div id="content" class="row">
-      <div class="large-2 columns">row 2 left</div>
-      <div class="large-8 large-centered columns">
+      <div class="large-2 columns"><small>row 3 left</small></div>
+      <div class="large-8 columns">
         <%= yield %>
       </div>
-      <div class="large-2 columns">row 2 right</div>
+      <div class="large-2 columns end"><small>row 3 right</small></div>
     </div>
 
-    <footer class="footer">
-      <div class="row">
-        <div class="small-12 columns">
+    <div class="row">
+      <footer class="footer">
+        <div class="large-2 columns"><small>row 4 left</small></div>
+        <div class="small-8 columns">
           Footer
-          </div>
-      </div>
-    </footer>
+        </div>
+        <div class="large-2 columns"><small>row 4 right</small></div>
+      </footer>
+    </div>
   </body>
 </html>
