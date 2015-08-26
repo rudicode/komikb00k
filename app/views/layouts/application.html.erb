@@ -1,14 +1,49 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Komikb00k</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<html lang="en>
+  <head>
+    <title>Komikb00k</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div class="row">
+      <div class="large-2 columns">row 1 left</div>
+      <div id="topLeft" class="large-2 columns">
+        <ul>
+          <li><a href="/archive">Archive</a></li>
+          <li><a href="http://what-if.xkcd.com">What If?</a></li>
+          <li><a href="http://blag.xkcd.com">Blag</a></li>
+          <li><a href="http://store.xkcd.com/">Store</a></li>
+          <li><a rel="author" href="/about">About</a></li>
+        </ul>
+      </div>
+      <div id="topRight" class="large-6 columns">
+        <div id="masthead">
+          <span><a href="/"><img src="#" alt="Logo" height="90" width="190"/></a></span>
+        </div>
+      </div>
+      <div class="large-2 columns">row 1 right</div>
+    </div>
 
-<%= yield %>
+    <div id="content" class="row">
+      <div class="large-2 columns">row 2 left</div>
+      <div class="large-8 large-centered columns">
+        <%= yield %>
+      </div>
+      <div class="large-2 columns">row 2 right</div>
+    </div>
 
-</body>
+    <footer class="footer">
+      <div class="row">
+        <div class="small-12 columns">
+          Footer
+          </div>
+      </div>
+    </footer>
+  </body>
 </html>
