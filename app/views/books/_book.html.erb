@@ -1,3 +1,11 @@
-<div><%= link_to book.title, book %> |
-<span><small><%= link_to 'Destroy Book', [book.user, book], method: :delete, data: { confirm: 'Are you sure?' } %></small></span>
-</div>
+<!-- <div> -->
+<tr>
+  <td>
+    <%= link_to book.user.name, user_path(book.user) %>
+  </td>
+  <td>
+    <%= link_to book.title, book %>
+  </td>
+</tr>
+<!-- <span><small><%= link_to 'Destroy Book', [book.user, book], method: :delete, data: { confirm: 'Are you sure?' } %></small></span> -->
+<!-- </div> -->

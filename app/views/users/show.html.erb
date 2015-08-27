@@ -2,7 +2,9 @@
 <h4>Description: <%= @user.description %></h4>
 
 <h3>Comic Books</h3>
-<%= render @user.books %>
+<table>
+  <%= render @user.books %>
+</table>
 
 <h2>Add a book:</h2>
       <%= render 'books/form' %>

@@ -1,14 +1,54 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Komikb00k</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<html lang="en>
+  <head>
+    <title>Komikb00k</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div class="row">
+      <div class="large-2 columns"><small>row 1 left</small></div>
+      <div id="topLeft" class="large-8 columns">
+        <ul class="inline-list">
+          <li><%= link_to(image_tag("logos/logo.png", width: '110'), root_path) %></li>
+          <li><%= link_to 'Other Komikb00ks', root_path %></li>
+          <li><%= link_to 'List of Authors', root_path %></li>
+        </ul>
+      </div>
+      <div class="large-2 columns"><small>row 1 right</small></div>
+    </div>
 
-<%= yield %>
+    <div class="row">
+      <div class="large-2 columns"><small>row 2 left</small></div>
+      <div id="topRight" class="large-8 columns">
+        <div id="masthead">
+          <span>Author:</span>
+        </div>
+      </div>
+      <div class="large-2 columns"><small>row 2 right</small></div>
+    </div>
 
-</body>
+    <div id="content" class="row">
+      <div class="large-2 columns"><small>row 3 left</small></div>
+      <div class="large-8 columns">
+        <%= yield %>
+      </div>
+      <div class="large-2 columns end"><small>row 3 right</small></div>
+    </div>
+
+    <div class="row">
+      <footer class="footer">
+        <div class="large-2 columns"><small>row 4 left</small></div>
+        <div class="small-8 columns">
+          Footer
+        </div>
+        <div class="large-2 columns"><small>row 4 right</small></div>
+      </footer>
+    </div>
+  </body>
 </html>
