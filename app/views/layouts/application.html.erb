@@ -14,6 +14,29 @@
     <div class="row">
       <div class="medium-2 columns"><small>row 1 left</small></div>
       <div id="topLeft" class="medium-8 columns">
+
+        <ul class="nav pull-right">
+  <li><%= link_to "Home",       root_path %></li>
+  <% if user_signed_in? %>
+    <li id="fat-menu" class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        Account <b class="caret"></b>
+      </a>
+      <ul class="dropdown-menu">
+        <li><%= link_to "Profile", edit_user_registration_path %></li>
+        <li><%= link_to "Settings", '#' %></li>
+        <li class="divider"></li>
+        <li>
+          <%= link_to "Logout", destroy_user_session_path, :method => :delete %>
+        </li>
+      </ul>
+    </li>
+    <li> <%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
+  <% else %>
+    <li><%= link_to "Sign in", new_user_session_path %></li>
+  <% end %>
+</ul>
+
         <ul class="inline-list">
           <li><%= link_to(image_tag("logos/logo.png", width: '110'), root_path) %></li>
           <li><%= link_to 'Other Komikb00ks', root_path %></li>
@@ -27,7 +50,7 @@
       <div class="medium-2 columns"><small>row 2 left</small></div>
       <div id="topRight" class="medium-8 columns">
         <div id="masthead">
-          <span>Author:</span>
+          <span>Author:<%= current_user.name %></span>
         </div>
       </div>
       <div class="medium-2 columns"><small>row 2 right</small></div>
@@ -36,6 +59,8 @@
     <div id="content" class="row">
       <div class="medium-2 columns"><small>row 3 left</small></div>
       <div class="medium-8 columns">
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
         <%= yield %>
       </div>
       <div class="medium-2 columns end"><small>row 3 right</small></div>

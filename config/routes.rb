@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  # devise_for :users
+  devise_for :users, :controllers => {:registrations => "registrations"}
   resources :users do
     resources :books, only: [:create, :destroy, :edit]
  end
