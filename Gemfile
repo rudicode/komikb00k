@@ -25,7 +25,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'foundation-rails'
 
-gem 'devise'
+gem 'devise', '~> 3.5'
+
+gem 'carrierwave'
+
+gem "mini_magick"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
