@@ -1,3 +1,18 @@
 .small-block-grid-1 {
   text-align: center;
 }
+
+body {
+  background: #9AB4D9;
+
+}
+
+.box { /*any of the box layouts & white backgrounds*/
+	background: white;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #071419;
+	border-color: #004;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+}
