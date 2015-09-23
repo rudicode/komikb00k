@@ -13,7 +13,15 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
+//= require foundation/foundation.equalizer.js
 //= require turbolinks
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
+
+// Hack so that foundation equalizer works for now.
+$( document ).ready(function() {
+    $(document).on('page:change', function() {
+      $(document).foundation('equalizer','reflow');
+    })
+});

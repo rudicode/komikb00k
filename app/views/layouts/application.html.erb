@@ -11,39 +11,36 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <div class="row">
-      <div id="topLeft" class="medium-4 columns box">
-        <ul class="nav pull-right">
-          <li><%= link_to "Home",       root_path %></li>
-          <% if user_signed_in? %>
-            <li id="fat-menu" class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                Account <b class="caret"></b>
-              </a>
-              <ul class="dropdown-menu">
-                <li><%= link_to "Profile", edit_user_registration_path %></li>
-                <li><%= link_to "Settings", '#' %></li>
-                <li class="divider"></li>
-                <li>
-                  <%= link_to "Logout", destroy_user_session_path, :method => :delete %>
-                </li>
-              </ul>
-            </li>
-            <li> <%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
-          <% else %>
+    <div class="row" data-equalizer>
+      <div id="topLeft" class="medium-4 columns box" data-equalizer-watch>
+        <%= link_to(image_tag("logos/logo.png", width: '110'), root_path) %>
+        <li><%= link_to "Home",       root_path %></li>
+        <li>
+          <a href="#" data-dropdown="hover1" data-options="is_hover:true; hover_timeout:5000">Account &raquo;</a>
+          <ul id="hover1" class="f-dropdown" data-dropdown-content>
+            <% if user_signed_in? %>
+              <li><%= link_to "Profile", edit_user_registration_path %></li>
+              <li><%= link_to "Settings", '#' %></li>
+              <li> <%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+            <% else %>
+              <li><%= link_to "Sign in", new_user_session_path %></li>
+            <% end %>
+          </ul>
+        </li>
+          <% if !user_signed_in? %>
             <li><%= link_to "Sign in", new_user_session_path %></li>
           <% end %>
-        </ul>
+        <li><%= link_to 'Other Komikb00ks', root_path %></li>
+        <li><%= link_to 'Other Authors', users_path %></li>
 
-        <ul class="inline-list">
-          <li><%= link_to(image_tag("logos/logo.png", width: '110'), root_path) %></li>
-          <li><%= link_to 'Other Komikb00ks', root_path %></li>
-          <li><%= link_to 'List of Authors', root_path %></li>
-        </ul>
       </div>
-      <div id="topRight" class="medium-8 columns box">
+      <div id="topRight" class="medium-8 columns box" data-equalizer-watch>
         <div id="masthead">
-          <span>Author:<%= current_user.name if current_user %></span>
+          <%= link_to(image_tag("logos/logo.png", width: '110'), root_path) %>
+          <span><%= current_user.name if current_user %></span>
+        <ul class="inline-list">
+          <li><%= link_to 'More comics', root_path %></li>
+        </ul>
         </div>
       </div>
     </div>
