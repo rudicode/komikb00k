@@ -1,8 +1,8 @@
 <div class="row">
   <div class="medium-12 columns">
-    <ul class="small-block-grid-1 panel">
+    <ul class="small-block-grid-1">
       <h1><%= @page.title %></h1>
-      <li><%= image_tag(@page.image) %></li>
+      <li><%= image_tag(@page.image, id: "comic-panel") %></li>
       <small><%= @page.caption %></small>
     </ul>
     <div class="small-block-grid-1">

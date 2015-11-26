@@ -3,16 +3,51 @@
 }
 
 body {
-  background: #9AB4D9;
+  // background: #9AB4D9;
+  background-image: url(background1.png);
+  background-attachment: fixed;
+}
 
+a {
+  color: blue;
+  text-shadow: 3px 2px 4px #667388;
+}
+
+.button {
+  background-color: #0045FF;
+}
+
+.button.tiny {
+  box-shadow: 20px 10px 11px #667388;
+  transition: all 0.3s ease;
+}
+.button.tiny:hover {
+  transform: scale(1.1,1.1);
 }
 
 .box { /*any of the box layouts & white backgrounds*/
 	background: white;
 	border-style: solid;
+  background-image: url(background2.png);
+  background-attachment: fixed;
 	border-width: 2px;
 	border-color: #071419;
 	border-color: #004;
 	border-radius: 10px;
 	-moz-border-radius: 10px;
+  box-shadow: 40px 40px 25px black;
+  margin: 10px;
+  padding: 10px;
+  transition: all 0.8s ease;
+}
+.box:hover {
+  transform: scale(1.02,1.02);
+}
+
+.panel {
+  background-image: url(background3.png);
+}
+
+#comic-panel {
+  box-shadow: 7px 5px 5px #444;
 }
